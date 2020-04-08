@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link href='../normalize.css' rel='stylesheet'>
+  <link href='../reset.local.css' rel='stylesheet'>
+  <link href='timeline.css' rel='stylesheet'>
+  <title>Timeline</title>
+  <!-- <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="ie11CustomProperties.js"><\x2fscript>');</script> -->
+</head>
+<body>
+  <ol class='timeline'>
+    <li class='timeline__step timeline__step--uncompleted'>
+      <p class='timeline__step-label'>Step 1</p>
+      <div class='timeline__step-checkpoint'></div>
+      <div class='timeline__step-line'></div>
+    </li>
+    <li class='timeline__step timeline__step--uncompleted'>
+      <p class='timeline__step-label'>Step 2</p>
+      <div class='timeline__step-checkpoint'></div>
+      <div class='timeline__step-line'></div>
+    </li>
+    <li class='timeline__step timeline__step--uncompleted'>
+      <p class='timeline__step-label'>Step 3</p>
+      <div class='timeline__step-checkpoint'></div>
+      <div class='timeline__step-line'></div>
+    </li>
+    <li class='timeline__step timeline__step--uncompleted'>
+      <p class='timeline__step-label'>Step 4</p>
+      <div class='timeline__step-checkpoint'></div>
+      <div class='timeline__step-line'></div>
+    </li>
+  </ol>
+
+  <section class='control-panel'>
+    <div class='control-panel__radiobox'>
+      <h3>Appearance</h3>
+      <div>
+        <input type='radio' id='step-is-line' name='appearance-radiobox' checked>
+        <label for='step-is-line'>Step is line</label>
+      </div>
+      <div>
+        <input type='radio' id='step-is-point' name='appearance-radiobox'>
+        <label for='step-is-point'>Step is point</label>
+      </div>
+    </div>
+    <div class='control-panel__radiobox'>
+      <h3>Labels position</h3>
+      <div>
+        <input type='radio' id='top-labels' name='labels-position-radiobox' checked>
+        <label for='top-labels'>Top</label>
+      </div>
+      <div>
+        <input type='radio' id='bottom-labels' name='labels-position-radiobox'>
+        <label for='bottom-labels'>Bottom</label>
+      </div>
+    </div>
+    <button type='button' id='forward-button'>Go forward!</button>
+  </section>
+  <script src='test-control.js' defer></script>
+</body>
+</html>
