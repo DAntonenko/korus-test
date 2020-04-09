@@ -1,0 +1,114 @@
+.timeline {
+  width: 1000px; }
+  .timeline__step {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 243.4px;
+    height: 60px; }
+  .timeline__step-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+    white-space: nowrap;
+    color: grey; }
+  .timeline__step-checkpoint {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid lightgrey; }
+  .timeline__step-line {
+    position: absolute;
+    top: 50%;
+    left: 12.2px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 232.2px;
+    height: 2px; }
+  .timeline--step-is-point .timeline__step {
+    width: 325.73333px; }
+  .timeline--step-is-point .timeline__step-label {
+    width: auto;
+    width: initial; }
+  .timeline--step-is-point .timeline__step-line {
+    width: 313.53333px; }
+  .timeline--step-is-point .timeline__step:not(:first-child).timeline__step:not(:last-child) .timeline__step-label {
+    padding-left: 15px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .timeline--step-is-point .timeline__step:last-child .timeline__step-label {
+    left: auto;
+    left: initial;
+    right: 0; }
+  .timeline--step-is-point .timeline__step:last-child {
+    width: 10px; }
+  .timeline--step-is-point .timeline__step:last-child .timeline__step-line {
+    display: none; }
+  .timeline--step-is-point .timeline__step--current .timeline__step-line {
+    background-color: lightgrey; }
+  .timeline--step-is-point .timeline__step--completed .timeline__step-line {
+    background-color: green; }
+  .timeline--label-bottom .timeline__step-label {
+    top: auto;
+    top: initial;
+    bottom: 0; }
+  .timeline__step--uncompleted .timeline__step-checkpoint {
+    background-color: transparent;
+    border: 2px solid lightgrey; }
+  .timeline__step--uncompleted .timeline__step-line {
+    background-color: lightgrey; }
+  .timeline__step--current .timeline__step-checkpoint {
+    background-color: darkorange;
+    border: none; }
+  .timeline__step--current .timeline__step-line {
+    background-color: darkorange; }
+  .timeline__step--completed .timeline__step-checkpoint {
+    background-color: green;
+    border: none; }
+  .timeline__step--completed .timeline__step-line {
+    background-color: green; }
+  .timeline__step:last-child .timeline__step-line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -12.2px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid lightgrey; }
+  .timeline__step.timeline__step--completed:last-child .timeline__step-line::after {
+    background-color: green;
+    border: none; }
+
+/* Control Panel Styles */
+.control-panel {
+  padding: 10px;
+  margin-top: 30px; }
+  .control-panel__radiobox {
+    display: inline-block;
+    width: 160px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid lightgrey; }
+  .control-panel__radiobox * {
+    margin: 5px; }
+  .control-panel button {
+    display: block;
+    width: 364px;
+    padding: 15px;
+    background-color: orange;
+    border-radius: 5px;
+    margin-left: 20px; }

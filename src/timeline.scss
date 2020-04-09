@@ -1,0 +1,186 @@
+$timelineWidth: 1000px;
+$checkpointDiameter: 10px;
+$lineThickness: 2px;
+$interelementGap: 2.2px;
+$stepWidth: $timelineWidth / 4 - $interelementGap * 3;
+$stepPointWidth: $timelineWidth / 3 - $interelementGap * 3 - 1px; // magic factor compensating for browser rendering inaccuracy
+$stepLineWidth: $stepWidth - $checkpointDiameter - $interelementGap + 1px;
+$stepPointLineWidth: $stepPointWidth - $checkpointDiameter - $interelementGap;
+$uncomletedStepColor: lightgrey;
+$currentStepColor: darkorange;
+$comletedStepColor: green;
+
+.timeline {
+  width: $timelineWidth;
+
+  &__step {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: $stepWidth;
+    height: 60px;
+  }
+
+  &__step-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+    white-space: nowrap;
+    color: grey;
+  }
+
+  &__step-checkpoint {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: $checkpointDiameter;
+    height: $checkpointDiameter;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid $uncomletedStepColor;
+  }
+
+  &__step-line {
+    position: absolute;
+    top: 50%;
+    left: $checkpointDiameter + $interelementGap;
+    transform: translateY(-50%);
+    width: $stepLineWidth;
+    height: $lineThickness;
+  }
+
+  &--step-is-point {
+
+    & .timeline__step {
+      width: $stepPointWidth;
+    }
+
+    & .timeline__step-label {
+      width: auto;
+      width: initial;
+    }
+
+    & .timeline__step-line {
+      width: $stepPointLineWidth;
+    }
+
+    & .timeline__step:not(:first-child).timeline__step:not(:last-child) .timeline__step-label {
+      padding-left: 15px;
+      transform: translateX(-50%);
+    }
+
+    & .timeline__step:last-child .timeline__step-label {
+      left: auto;
+      left: initial;
+      right: 0;
+    }
+
+    & .timeline__step:last-child {
+      width: $checkpointDiameter;
+    }
+
+    & .timeline__step:last-child .timeline__step-line {
+      display: none;
+    }
+
+    & .timeline__step--current .timeline__step-line {
+      background-color: $uncomletedStepColor;
+    }
+
+    & .timeline__step--completed .timeline__step-line {
+      background-color: $comletedStepColor;
+    }
+  }
+
+  &--label-bottom .timeline__step-label {
+    top: auto;
+    top: initial;
+    bottom: 0;
+  }
+
+  &__step--uncompleted {
+
+    & .timeline__step-checkpoint {
+      background-color: transparent;
+      border: 2px solid $uncomletedStepColor;
+    }
+
+    & .timeline__step-line {
+      background-color: $uncomletedStepColor;
+    }
+  }
+
+  &__step--current {
+
+    & .timeline__step-checkpoint {
+      background-color: $currentStepColor;
+      border: none;
+    }
+
+    & .timeline__step-line {
+      background-color: $currentStepColor;
+    }
+  }
+
+  &__step--completed {
+
+    & .timeline__step-checkpoint {
+      background-color: $comletedStepColor;
+      border: none;
+    }
+
+    & .timeline__step-line {
+      background-color: $comletedStepColor;
+    }
+  }
+
+  &__step:last-child .timeline__step-line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: ($checkpointDiameter + $interelementGap) * -1;
+    transform: translateY(-50%);
+    width: $checkpointDiameter;
+    height: $checkpointDiameter;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid $uncomletedStepColor;
+  }
+
+  &__step.timeline__step--completed:last-child .timeline__step-line::after {
+    background-color: $comletedStepColor;
+    border: none;
+  }
+}
+
+/* Control Panel Styles */
+.control-panel {
+  padding: 10px;
+  margin-top: 30px;
+
+  &__radiobox {
+    display: inline-block;
+    width: 160px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid lightgrey;
+  }
+
+  &__radiobox * {
+    margin: 5px;
+  }
+
+  & button {
+    display: block;
+    width: 364px;
+    padding: 15px;
+    background-color: orange;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+}
