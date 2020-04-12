@@ -19,7 +19,6 @@
     position: absolute;
     top: 50%;
     left: 0;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
@@ -30,7 +29,6 @@
     position: absolute;
     top: 50%;
     left: 12.2px;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 232.2px;
     height: 2px; }
@@ -43,7 +41,6 @@
     width: 313.53333px; }
   .timeline--step-is-point .timeline__step:not(:first-child).timeline__step:not(:last-child) .timeline__step-label {
     padding-left: 15px;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
   .timeline--step-is-point .timeline__step:last-child .timeline__step-label {
     left: auto;
@@ -82,7 +79,6 @@
     position: absolute;
     top: 50%;
     right: -12.2px;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
