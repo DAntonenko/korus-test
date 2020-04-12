@@ -1,10 +1,11 @@
 .timeline {
+  display: table;
   width: 1000px; }
   .timeline__step {
-    display: inline-block;
+    float: left;
     vertical-align: top;
     position: relative;
-    width: 243.4px;
+    width: 247.5px;
     height: 60px; }
   .timeline__step-label {
     position: absolute;
@@ -42,18 +43,18 @@
   .timeline__step-line {
     position: absolute;
     top: 50%;
-    left: 12.2px;
+    left: 12px;
     transform: translateY(-50%);
-    width: 232.2px;
+    width: 233.5px;
     height: 2px; }
   .timeline--step-is-point .timeline__step {
-    width: 325.73333px; }
+    width: 330px; }
   .timeline--step-is-point .timeline__step-label {
     width: auto;
     width: initial;
-    max-width: 217.15556px; }
+    max-width: 220px; }
   .timeline--step-is-point .timeline__step-line {
-    width: 313.53333px; }
+    width: 316px; }
   .timeline--step-is-point .timeline__step:not(:first-child).timeline__step:not(:last-child) .timeline__step-label {
     padding-left: 15px;
     transform: translateX(-50%); }
@@ -61,7 +62,7 @@
     left: auto;
     left: initial;
     right: 0;
-    width: 217.15556px; }
+    width: 220px; }
   .timeline--step-is-point .timeline__step:last-child {
     width: 10px; }
   .timeline--step-is-point .timeline__step:last-child .timeline__step-line {
@@ -98,7 +99,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: -12.2px;
+    right: -12px;
     transform: translateY(-50%);
     width: 10px;
     height: 10px;

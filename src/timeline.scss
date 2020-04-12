@@ -1,20 +1,24 @@
 $timelineWidth: 1000px;
+$stepsQuantity: 4;
 $checkpointDiameter: 10px;
 $lineThickness: 2px;
-$interelementGap: 2.2px;
-$stepWidth: $timelineWidth / 4 - $interelementGap * 3;
-$stepPointWidth: $timelineWidth / 3 - $interelementGap * 3 - 1px; // magic factor compensating for browser rendering inaccuracy
-$stepLineWidth: $stepWidth - $checkpointDiameter - $interelementGap + 1px;
-$stepPointLineWidth: $stepPointWidth - $checkpointDiameter - $interelementGap;
+$interelementGap: 2px;
+$stepWidth: $timelineWidth / $stepsQuantity - $checkpointDiameter / $stepsQuantity;
+$stepPointWidth: $timelineWidth / ($stepsQuantity - 1) - $checkpointDiameter / ($stepsQuantity - 1);
+$stepLineWidth: $stepWidth - $checkpointDiameter - $interelementGap * 2;
+$stepPointLineWidth: $stepPointWidth - $checkpointDiameter - $interelementGap * 2;
 $uncomletedStepColor: lightgrey;
 $currentStepColor: darkorange;
 $comletedStepColor: green;
 
 .timeline {
+  display: table; // To avoid using of a spacer for IE
   width: $timelineWidth;
 
   &__step {
-    display: inline-block;
+    // display: table-cell; // Alternative way
+    // display: inline-block; // Alternative way
+    float: left; 
     vertical-align: top;
     position: relative;
     width: $stepWidth;

@@ -8,7 +8,8 @@ const positionBottomRadiobutton = document.getElementById('bottom-labels');
 
 const forwardButton = document.getElementById('forward-button');
 
-const timelineStep = document.querySelector('.timeline__step');
+// const timelineSteps = document.querySelectorAll('.timeline__step');
+// const timelineStepsQuantity = timelineSteps.length;
 
 document.addEventListener('change', function() {
   if (appearanceLineRadiobutton.checked) {
@@ -17,17 +18,14 @@ document.addEventListener('change', function() {
   
   if (appearancePointRadiobutton.checked) {
     timeline.classList.add('timeline--step-is-point');
-    timelineStep.style.width = 333;
   }
 
   if (positionTopRadiobutton.checked) {
     timeline.classList.remove('timeline--label-bottom');
-    console.log('I`m here!');
   }
   
   if (positionBottomRadiobutton.checked) {
     timeline.classList.add('timeline--label-bottom');
-    console.log('I`m here!');
   }
 });
 
