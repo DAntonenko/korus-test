@@ -29,7 +29,23 @@ $comletedStepColor: green;
     text-align: center;
     padding: 0 5px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: grey;
+  }
+
+  &__step-label:hover {
+    overflow: inherit;
+    text-overflow: inherit;
+    white-space: inherit;
+    height: auto;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px lightgrey;
+    z-index: 10;
   }
 
   &__step-checkpoint {
@@ -62,6 +78,7 @@ $comletedStepColor: green;
     & .timeline__step-label {
       width: auto;
       width: initial;
+      max-width: $stepPointWidth / 1.5;
     }
 
     & .timeline__step-line {
@@ -77,6 +94,7 @@ $comletedStepColor: green;
       left: auto;
       left: initial;
       right: 0;
+      width: $stepPointWidth / 1.5;
     }
 
     & .timeline__step:last-child {
@@ -100,6 +118,12 @@ $comletedStepColor: green;
     top: auto;
     top: initial;
     bottom: 0;
+
+    &:hover {
+      top: 0;
+      bottom: auto;
+      bottom: initial;
+    }
   }
 
   &__step--uncompleted {
